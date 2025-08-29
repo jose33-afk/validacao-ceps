@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./src/assets/css/global.css">
-    <link rel="stylesheet" href="./src/assets/css/normalize.css">
-    <link rel="stylesheet" href="./src/assets/css/home.css">
+    <link rel="stylesheet" href="./src/assets/css/global.css" />
+    <link rel="stylesheet" href="./src/assets/css/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/css/home.css" />
 
     <script type="module" src="./src/js/main.js" defer></script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <form class="formulario-conteiner">
+      <h1 class="formulario-item__titulo">Validacao de Cep</h1>
+      <div>
+        <label for="formulario-item__cep">Cep</label>
+        <input type="text" name="formulario-item__cep" id="formulario-item__cep" placeholder="Ex 01001-000" maxlength="9">
+      </div>
+      <div class="formulario-item__dica">Digite somente numeros!</div>
+    </form>
+  </body>
 </html>

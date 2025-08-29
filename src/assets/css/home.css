@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(10, 14, 70);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-conteiner {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(53, 52, 52);
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    flex: 0 1 100px;
+    min-width: 20%;
+}
+
+.formulario-item__titulo {
+    font-size: 16px;
+}
+
+.formulario-conteiner:focus-within .formulario-item__dica {
+    color: yellow;
+    opacity: 1;
+}
+
+/* Mostra a mensagem quando qualquer coisa dentro do container receber foco*/
+
+#formulario-item__cep {
+    all: unset;
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 5px;
+    margin-left: 5px;
+    text-align: center;
+
+}
+
+#formulario-item__cep:focus {
+   border: 1px solid yellow; 
+}
+
+.formulario-item__dica {
+    opacity: 0;
+    margin-left: 38px;
+}
