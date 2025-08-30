@@ -10,6 +10,8 @@ main {
   background: #4c5958;
   border-radius: 10px;
   box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.363);
+  display: flex;
+  flex-flow: column nowrap;
   padding: 10px;
   flex: 0 1 440px;
   height: 600px;
@@ -26,7 +28,8 @@ main {
 .form-container {
   display: grid;
   font-size: .9em;
-  grid-template: repeat(7, 1fr) / 1fr 1fr;
+  flex: 0 1 92%;
+  grid-template: .5fr .5fr.5fr .5fr .3fr .3fr / 1fr 1fr;
   grid-template-areas:
     "primeiro segundo"
     "rua numero"
@@ -34,7 +37,7 @@ main {
     "cep bairro"
     "cidade estado"
     "botao botao";
-  height: 100%;
+  justify-content: space-evenly;
   width: 100%;
 }
 
@@ -50,10 +53,17 @@ main {
     border-bottom: 1px solid yellow;
 }
 
+/*Todos os labels*/
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
 /*Nome e sobrenome*/
 .primeiro-nome {
   grid-area: primeiro;
 }
+
 
 .segundo-nome {
     grid-area: segundo;
@@ -100,6 +110,16 @@ main {
     margin-right: 8%;
     justify-self: right;
     grid-area: botao;
-    height: 35%;
+    height: 65%;
     width: 10em;
+}
+
+/*midia mobile*/
+@media (max-width: 768px) {
+   main {
+     flex: 0 1;
+   }
+  .form-container {
+    width: 90vw;
+  }
 }
