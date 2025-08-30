@@ -29,7 +29,7 @@ main {
   display: grid;
   font-size: .9em;
   flex: 0 1 92%;
-  grid-template: .5fr .5fr.5fr .5fr .3fr .3fr / 1fr 1fr;
+  grid-template: .5fr .5fr.5fr .5fr .4fr .3fr / 1fr 1fr;
   grid-template-areas:
     "primeiro segundo"
     "rua numero"
@@ -49,6 +49,10 @@ main {
     width: 95%;
 }
 
+.form-container input::placeholder {
+    padding-left: 5px;
+}
+
 .form-container input:focus {
     border-bottom: 1px solid yellow;
 }
@@ -63,7 +67,6 @@ main {
 .primeiro-nome {
   grid-area: primeiro;
 }
-
 
 .segundo-nome {
     grid-area: segundo;
@@ -107,19 +110,42 @@ main {
 
 /*Botao de envio*/
 .form-item__btn {
+    all: unset;
+    border: 1px solid white;
+    border-radius: 25px;
     margin-right: 8%;
+    text-align: center;
     justify-self: right;
     grid-area: botao;
     height: 65%;
     width: 10em;
 }
 
+.form-item__btn:focus {
+    background: white;
+    color: black;
+    transform: translate(3px, 3px);
+    transition: transform .5s ease;
+}
+
 /*midia mobile*/
 @media (max-width: 768px) {
-   main {
-     flex: 0 1;
-   }
+  body {
+    display: block;
+  }
+
+  main {
+    border-radius: 0;
+    box-shadow: none;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .main__titulo {
+    margin: 25px 0;
+  }
+
   .form-container {
-    width: 90vw;
+    flex: 0 1 62%;
   }
 }
