@@ -12,8 +12,18 @@
   </head>
   <body>
     <main>
-      <h1 class="main__titulo">Cadastrar Endereco</h1>
+      <h1 class="main__titulo">Cadastrar endereço</h1>
       <form class="form-container">
+        <div class="primeiro-nome">
+          <label for="primeiro-nome">Nome</label>
+          <input type="text" id="primeiro-nome">
+        </div>
+
+        <div class="segundo-nome">
+          <label for="segundo-nome">Sobrenome</label>
+          <input type="text" id="segundo-nome">
+        </div>
+        
         <div class="form-item__rua">
           <label for="rua__input">Rua/Avenida</label>
           <input type="text" id="rua__input"/>
@@ -34,13 +44,18 @@
           <input type="text" id="cep__input">
         </div>
 
+        <div class="form-item__bairro">
+          <label for="bairro__input">Bairro</label>
+          <input type="text" id="bairro__input">
+        </div>
+
         <div class="form-item__cidade"> <!--Automatico com cep-->
-          <label for="cidade__input"></label>
+          <label for="cidade__input">Cidade</label>
           <input type="text" id="cidade__input">
         </div>
 
         <div class="form-item__estado"> <!--Automatico com cep-->
-          <label for="estado__input"></label>
+          <label for="estado__input">Estado</label>
           <input type="text" id="estado__input">
         </div>
 

@@ -1,9 +1,105 @@
 body {
-    background-color: #10403B;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+  background-color: #bfbfbf;
+  color: #eee6ae;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background: #4c5958;
+  border-radius: 10px;
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.363);
+  padding: 10px;
+  flex: 0 1 440px;
+  height: 600px;
+}
+
+.main__titulo {
+  color: white;
+  font-size: 1.5em;
+  font-family: var(--font-default);
+  margin: 5px 0;
 }
 
 /*Formulario*/
+.form-container {
+  display: grid;
+  font-size: .9em;
+  grid-template: repeat(7, 1fr) / 1fr 1fr;
+  grid-template-areas:
+    "primeiro segundo"
+    "rua numero"
+    "complemento complemento"
+    "cep bairro"
+    "cidade estado"
+    "botao botao";
+  height: 100%;
+  width: 100%;
+}
+
+/*Todos os inputs*/
+.form-container input {
+    all: unset;
+    color: white;
+    border-bottom: 1px solid white;
+    width: 95%;
+}
+
+.form-container input:focus {
+    border-bottom: 1px solid yellow;
+}
+
+/*Nome e sobrenome*/
+.primeiro-nome {
+  grid-area: primeiro;
+}
+
+.segundo-nome {
+    grid-area: segundo;
+}
+
+/*Rua/Avenida*/
+.form-item__rua {
+  grid-area: rua;
+}
+
+/*Numero da casa*/
+.form-item__numero {
+    grid-area: numero;
+}
+
+/*Complemento*/
+.form-item__complemento {
+    display: flex;
+    flex-flow: column nowrap;
+    grid-area: complemento;
+}
+
+/*Cep e bairro*/
+.form-item__cep {
+    grid-area: cep;
+}
+
+.form-item__bairro {
+    grid-area: bairro;
+}
+
+/*Cidade*/
+.form-item__cidade {
+    grid-area: cidade;
+}
+
+/*Estado*/
+.form-item__estado {
+    grid-area: estado;
+}
+
+/*Botao de envio*/
+.form-item__btn {
+    margin-right: 8%;
+    justify-self: right;
+    grid-area: botao;
+    height: 35%;
+    width: 10em;
+}
