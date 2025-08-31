@@ -16,17 +16,32 @@
       <form class="form-container">
         <div class="primeiro-nome">
           <label for="primeiro-nome">Nome</label>
-          <input type="text" id="primeiro-nome">
+          <input 
+           type="text" 
+           id="primeiro-nome" 
+           required 
+           minlength="3" 
+           maxlength="20" 
+           autocomplete="name">
         </div>
 
         <div class="segundo-nome">
           <label for="segundo-nome">Sobrenome</label>
-          <input type="text" id="segundo-nome">
+          <input 
+           type="text" 
+           id="segundo-nome"
+           required
+           maxlength="20" 
+           autocomplete="name">
         </div>
         
         <div class="form-item__rua">
           <label for="rua__input">Rua/Avenida</label>
-          <input type="text" id="rua__input"/>
+          <input 
+          type="text" 
+          id="rua__input"
+          minlength="3"
+          required/>
         </div>
 
         <div class="form-item__numero">
@@ -34,7 +49,12 @@
           <input 
            type="text" 
            id="numero__input"
-           placeholder="(87) 33674673"/>
+           minlength="8"
+           maxlength="12"
+           placeholder="(87) 33674673"
+           required
+           pattern="^\d+$" 
+           autocomplete="tel"/>
         </div>
 
         <div class="form-item__complemento">
@@ -48,23 +68,38 @@
             type="text" 
             id="cep__input"
             placeholder="01001-000"
-            maxlength="9"
+            required
+            pattern="\d{8}"
+            maxlength="8"
             >
         </div>
 
         <div class="form-item__bairro">
           <label for="bairro__input">Bairro</label>
-          <input type="text" id="bairro__input">
+          <input 
+           type="text" 
+           id="bairro__input"
+           minlength="3"
+           required
+           autocomplete="address-level1">
         </div>
 
         <div class="form-item__cidade"> <!--Automatico com cep-->
           <label for="cidade__input">Cidade</label>
-          <input type="text" id="cidade__input">
+          <input 
+           type="text" 
+           minlength="3"
+           id="cidade__input"
+           required>
         </div>
 
         <div class="form-item__estado"> <!--Automatico com cep-->
           <label for="estado__input">Estado</label>
-          <input type="text" id="estado__input">
+          <input 
+           type="text" 
+           id="estado__input"
+           minlength="3"
+           required>
         </div>
 
         <button type="submit" class="form-item__btn">Enviar</button>

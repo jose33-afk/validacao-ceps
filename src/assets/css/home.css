@@ -94,6 +94,11 @@ main {
     grid-area: cep;
 }
 
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .form-item__bairro {
     grid-area: bairro;
 }
@@ -121,7 +126,7 @@ main {
     width: 10em;
 }
 
-.form-item__btn:focus {
+.form-item__btn:active {
     background: white;
     color: black;
     transform: translate(3px, 3px);
@@ -137,7 +142,6 @@ main {
   main {
     border-radius: 0;
     box-shadow: none;
-    position: fixed;
     height: 100vh;
     width: 100vw;
   }

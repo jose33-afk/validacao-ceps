@@ -1,1 +1,2 @@
-import { validarCep } from "./modules/api.js";
+import { Endereco } from "./modules/ClassEndereco.js";
+import "./modules/formulario.js"; //Funciona passivamente.
