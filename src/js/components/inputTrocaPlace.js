@@ -1,21 +1,16 @@
 import { pegaElemento } from "../modules/ultis.js";
 const cepInput = pegaElemento("#cep__input");
+const NumCll = pegaElemento("#numero__input");
 
-cepInput.addEventListener("focus", () => {
-  cepInput.placeholder = "Digite somente numeros!";
-});
+const trocaPlaceholder = (elemento, focus, normal) => {
+  elemento.addEventListener("focus", () => {
+    elemento.placeholder = focus;
+  });
 
-cepInput.addEventListener("blur", () => (cepInput.placeholder = "01001-000")); //() unica linha
+  elemento.addEventListener("blur", () => (elemento.placeholder = normal)); //() unica linha
+};
 
-cepInput.addEventListener("input", () => {
-  if (cepInput.value.length === 8) {
-    const cep = cepInput.value;
-    if (/^[0-9]+$/.test(cep)) { //1
-      console.log(cep);
-    } else {
-      alert("[Cep:Error]invalido!");
-    }
-  }
-});
+trocaPlaceholder(cepInput, "Digite somente numeros!", "01001-000");
+trocaPlaceholder(NumCll, "Digite somente numeros!", "(87) 33674673");
 
-//teste e pra testar expressoes regulares.
+export { cepInput, NumCll};

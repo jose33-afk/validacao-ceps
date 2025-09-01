@@ -2,8 +2,6 @@ import { pegaElemento } from "./ultis.js";
 import { Endereco } from "./ClassEndereco.js";
 const formulario = pegaElemento(".form-container");
 
-
-
 //Pega dados.
 let preenchido = false;
 formulario.addEventListener("submit", (event) => {
