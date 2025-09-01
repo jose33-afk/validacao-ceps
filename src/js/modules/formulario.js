@@ -1,7 +1,10 @@
 import { pegaElemento } from "./ultis.js";
 import { Endereco } from "./ClassEndereco.js";
-const formulario = document.querySelector(".form-container");
+const formulario = pegaElemento(".form-container");
 
+
+
+//Pega dados.
 let preenchido = false;
 formulario.addEventListener("submit", (event) => {
   event.preventDefault(); //impede o recarregamento da página
@@ -17,7 +20,7 @@ formulario.addEventListener("submit", (event) => {
   }
 });
 
-const teste = (testeendereco) => {
+const teste = (testeendereco) => { //oq eu vou fazer com dados
   console.log(testeendereco);
 };
 

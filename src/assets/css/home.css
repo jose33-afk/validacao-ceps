@@ -94,11 +94,6 @@ main {
     grid-area: cep;
 }
 
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .form-item__bairro {
     grid-area: bairro;
 }
