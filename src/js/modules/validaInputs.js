@@ -3,15 +3,19 @@ import { pegaElemento } from "./ultis.js";
 const listadivs = pegaElemento("div", 2);
 
 //validar spans.
-const validarInput = (nome, valor) => {
-  if (/(.)\1{5,}/.test(valor)) alert(`Tem certeza que isso e um(a) ${nome}`);
+const validarInput = (nome, input) => {
+  let valor = input.value;
+  if (/(.)\1{5,}/.test(valor)) {
+    alert(`Tem certeza que isso e um(a) ${nome}`);
+    input.value = "";
+  }
 };
 
 for (let div of listadivs) {
   let nome = div.querySelector("label").textContent;
   let input = div.querySelector("input");
   input.addEventListener("input", () => {
-    validarInput(nome, input.value);
+    validarInput(nome, input);
   });
 }
 
@@ -25,6 +29,7 @@ const SomenteNumeros = (elemento, nome, comprimento) => {
         console.log(valorElemento);
       } else {
         alert(`[${nome}:Error]invalido!`);
+        elemento.value= '';
       }
     }
   });
