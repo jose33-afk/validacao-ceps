@@ -1,5 +1,6 @@
 import { cepInput, NumCll } from "../components/inputTrocaPlace.js";
 import { pegaElemento } from "./ultis.js";
+import { preencheDados } from "./preenchedadosAuto.js";
 const listadivs = pegaElemento("div", 2);
 
 //validar spans.
@@ -22,14 +23,19 @@ for (let div of listadivs) {
 //Validar numeros.
 const SomenteNumeros = (elemento, nome, comprimento) => {
   elemento.addEventListener("input", () => {
+    if (elemento.value.length != 8) (elemento.dataset.valido = "off");
+
     if (elemento.value.length === comprimento) {
       const valorElemento = elemento.value;
-      if (/^[0-9]+$/.test(valorElemento)) {
-        //1
-        console.log(valorElemento);
-      } else {
-        alert(`[${nome}:Error]invalido!`);
-        elemento.value= '';
+      console.log(`somente numeros valido:${elemento.dataset.valido}`);
+
+      if (elemento.dataset.valido === "off") {
+        if (/^[0-9]+$/.test(valorElemento)) {
+          if (nome == "Cep") preencheDados(valorElemento);
+        } else {
+          alert(`[${nome}:Error]invalido!`);
+          elemento.value = "";
+        }
       }
     }
   });
@@ -37,4 +43,5 @@ const SomenteNumeros = (elemento, nome, comprimento) => {
 
 SomenteNumeros(cepInput, "Cep", 8);
 SomenteNumeros(NumCll, "Numero", 11);
+
 //teste e pra testar expressoes regulares.
